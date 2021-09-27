@@ -2,13 +2,18 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
 import mongoose from 'mongoose';
+import postRoutes from './routes/posts.js';
 
 // initialize application, allowing methods
 const app = express();
 
+// every route in post routes is going to start with prefix "/posts"
+app.use('/posts', postRoutes);
+
 // allowing requests to be sent properly.
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
+
 
 // allows access to resources outside domain
 app.use(cors());
