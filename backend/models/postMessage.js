@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-// specifying that each post should meet a certain criteria
+// Specifying that each post should meet a certain criteria. Mongooose model will later be used for CRUD operations
 const postSchema = mongoose.Schema({
     title: String,
     message: String,
@@ -17,7 +17,6 @@ const postSchema = mongoose.Schema({
     },
 });
 
-// mongooose model will be used later for CRUD operations
-const PostMessage = mongoose.model('PostMessage', postSchema)
+const PostMessage = mongoose.model('PostMessage', postSchema);
 
 export default PostMessage;
