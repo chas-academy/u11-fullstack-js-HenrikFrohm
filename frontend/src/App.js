@@ -3,14 +3,21 @@ import { Container, AppBar, Typography, Grow, Grid } from '@material-ui/core';
 
 import Posts from './components/Posts/Posts';
 import Form from './components/Form/Form';
-import image2 from './images/image2.jpg';
+import useStyles from './styles';
+
+//import image1 from './images/image1.jpg';
+//import image2 from './images/image2.jpg';
+//import image3 from './images/image3.jpg';
+import boxing_glove from './images/boxing_glove.png';
 
 const App = () => {
+    const classes = useStyles();
     return (
-        <Container maxidth="lg">
-            <AppBar position="static" color="inherit">
-                <Typography variant="h2" align="center">Kampsportsnytt
+        <Container maxWidth="lg">
+            <AppBar className={classes.appBar} position="static" color="inherit">
+                <Typography className={classes.heading} variant="h2" align="center">Kampsportsnytt
                 </Typography>
+                <img className={classes.image} src={boxing_glove} alt="glovesIcon" height="60" />
             </AppBar>
             <Grow in>
                 <Container>
