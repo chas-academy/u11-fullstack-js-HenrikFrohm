@@ -1,8 +1,6 @@
-import { useDebugValue } from "react";
-
 // adding reducer function, which takes current state and an action as arguments and return new state result. 
-//Using switch statement instead of if to if to avoid clutter
-//Posts is an array, which is specified. State can be renamed to posts.
+// using switch statement instead of if to if to avoid clutter
+// posts is an array, which is specified. State can be renamed to posts.
 export default (posts = [], action) => {
     switch (action.type) {
         case 'FETCH_ALL':
@@ -12,4 +10,4 @@ export default (posts = [], action) => {
         default:
             return posts;
     }
-    }
+}
