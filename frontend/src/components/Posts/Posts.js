@@ -6,7 +6,7 @@ const Posts = () => {
 const classes = useStyles();
     return (
         <>
-        <h1>POSTS</h1>
+        <h1>Articles</h1>
         <Post />
         <Post />
         </>

@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Container, AppBar, Typography, Grow, Grid } from '@material-ui/core';
-
+import { useDispatch } from 'react-redux';
+import { getPosts } from './actions/posts';
 import Posts from './components/Posts/Posts';
 import Form from './components/Form/Form';
 import useStyles from './styles';
@@ -12,6 +13,14 @@ import boxing_glove from './images/boxing_glove.png';
 
 const App = () => {
     const classes = useStyles();
+    const dispatch = useDispatch();
+
+// dispatch get-posts action with useEffect
+    useEffect(() => {
+        dispatch(getPosts());
+    }, [dispatch]);
+    
+// utilizing material ui components
     return (
         <Container maxWidth="lg">
             <AppBar className={classes.appBar} position="static" color="inherit">
@@ -25,7 +34,7 @@ const App = () => {
                         <Grid item xs={12} sm={7}>
                             <Posts />
                         </Grid>
-                        <Grid item xs={12} sm={7}>
+                        <Grid item xs={12} sm={4}>
                             <Form />
                         </Grid>
                     </Grid>
