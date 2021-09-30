@@ -1,7 +1,7 @@
 // initializing redux
 
 import React from 'react';
-import { ReactDOM } from 'react-dom';
+import ReactDOM from 'react-dom';
 // to keep track of store in global state
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
@@ -18,4 +18,5 @@ ReactDOM.render(
     <Provider store={store}>
         <App />
     </Provider>,
- document.getElementById('root'));
+ document.getElementById('root')
+ );
