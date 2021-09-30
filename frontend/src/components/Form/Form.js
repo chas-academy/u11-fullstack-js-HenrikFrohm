@@ -1,14 +1,22 @@
 import React, { useState } from "react";
 import { TextField, Button, Typography, Paper } from "@material-ui/core";
 import FileBase from 'react-file-base64';
+import { useDispatch } from "react-redux";
 import useStyles from './styles';
+import { createPost } from '../../actions/posts';
 
 
 const Form = () => {
     const classes = useStyles();
-    const [postData, setPostData] = useState({ author: '', title: '', message: '', tags: '', selectedFile: '' });
-    const handleSubmit = () => {
+    const [postData, setPostData] = useState({ comment: '' });
+    const dispatch = useDispatch();
 
+    // when user submit a post request is sent with the typed data. Goes to reducers once dispatched.
+    // preventDefault method used to avoid normal event of browser refresh
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        dispatch(createPost(postData));
     }
     const clear = () => {
 
@@ -16,12 +24,8 @@ const Form = () => {
     return (
         <Paper className={classes.paper}>
             <form autoComplete="off" noValidate className={`${classes.root} ${classes.form}`} onSubmit={handleSubmit}>
-                <Typography variant="h6">Creating article</Typography>
-                <TextField name="author" variant="outlined" label="Author" fullWidth value={postData.author}onChange={(e) => setPostData({ ...postData, author: e.target.value })}/>
-                <TextField name="title" variant="outlined" label="Title" fullWidth value={postData.title}onChange={(e) => setPostData({ ...postData, title: e.target.value })}/>
-                <TextField name="message" variant="outlined" label="Message" fullWidth value={postData.message}onChange={(e) => setPostData({ ...postData, message: e.target.value })}/>
-                <TextField name="tags" variant="outlined" label="Tags" fullWidth value={postData.tags}onChange={(e) => setPostData({ ...postData, tags: e.target.value })}/>
-                <div className={classes.fileInput}><FileBase type="file" multiple={false} onDone={({base64}) => setPostData({ ...postData, selectedFile: base64})}/></div>
+                <Typography variant="h6">Share your thoughts</Typography>
+                <TextField name="comment" variant="outlined" label="Comment" fullWidth value={postData.comment}onChange={(e) => setPostData({ ...postData, comment: e.target.value })}/>
                 <Button className={classes.buttonSubmit} variant="contained" color="primary" size="large" type="submit" fullWidth>Submit</Button>
                 <Button variant="contained" color="secondary" size="small" onClick={clear} fullWidth>Clear</Button>
 
