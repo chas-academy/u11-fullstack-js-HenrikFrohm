@@ -7,16 +7,15 @@ import postRoutes from './routes/posts.js';
 // initialize application, allowing methods
 const app = express();
 
-// every route in post routes is going to start with prefix "/posts"
-app.use('/posts', postRoutes);
-
 // allowing requests to be sent properly.
 app.use(express.json({ limit: "30mb", extended: true }));
 app.use(express.urlencoded({ limit: "30mb", extended: true }));
 
-
 // allows access to resources outside domain
 app.use(cors());
+
+// every route in post routes is going to start with prefix "/posts"
+app.use('/posts', postRoutes);
 
 // MongoDB database, when connected to Heroku the env will be populate env
 const CONNECTION_URL = 'mongodb+srv://u11user:u11pass123@cluster0.c8nhz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
