@@ -10,4 +10,7 @@ export const fetchPosts = () => axios.get(url);
 //post request
 export const createPost = (newPost) => axios.post(url, newPost);
 
+// update post, id and url specified
+export const updatePost = (id, updatedPost) => axios.patch(`${url}/${id}`, updatedPost);
+
 // adding redux capabilities for actions to backend
