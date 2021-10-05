@@ -7,7 +7,7 @@ import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import moment from 'moment';
 import useStyles from './styles';
 import { useDispatch } from "react-redux";
-import { deletePost } from '../../../actions/posts';
+import { deletePost, likePost } from '../../../actions/posts';
 
 // styling post using material ui and moment
 const Post = ({ post, setCurrentId }) => {
@@ -19,7 +19,7 @@ const dispatch = useDispatch();
             <CardMedia className={classes.media} image={post.selectedFile} title={post.title} />
             <div className={classes.overlay}>
                 <Typography variant="h6">{post.creator}</Typography>
-                <Typography variant="body2">{moment(post.createdAt).fromNow()}</Typography>
+                <Typography variant="body3">{moment(post.createdAt).fromNow()}</Typography>
             </div>
             <div className={classes.overlay2}>
                 <Button style={{color: 'white'}} size='small' onClick={() => setCurrentId(post._id)}>
@@ -29,17 +29,17 @@ const dispatch = useDispatch();
             <div className={classes.details}>
                 <Typography variant="body2" color="textSecondary">{post.tags.map((tag) => `#${tag} `)}</Typography>
             </div>
-                <Typography className={classes.title} variant="h5" gutterBottom>{post.title}</Typography>
+                <Typography className={classes.title} variant="h6">{post.title}</Typography>
             <CardContent>
-                <Typography className={classes.message} variant="h5" gutterBottom>{post.message}</Typography>
+                <Typography className={classes.message} variant="h7">{post.message}</Typography>
             </CardContent>
             <CardActions className={classes.cardActions}>
-                <Button size="small" color="primary" onClick={() => {}}>
+                <Button size="BUTTON TEXT" color="primary" onClick={() => dispatch(likePost(post._id))}>
                     <ThumbUpAltIcon fontSize="small" />
                     Like
                     {post.likeCount}
                 </Button>
-                <Button size="small" color="primary" onClick={() => dispatch(deletePost(post._id))}>
+                <Button size="BUTTON TEXT" color="primary" onClick={() => dispatch(deletePost(post._id))}>
                     <DeleteIcon fontSize="small" />
                     Delete
                 </Button>
