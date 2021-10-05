@@ -8,7 +8,7 @@ export default makeStyles(() => ({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'inherit',
+    backgroundColor: 'white',
   },
   heading: {
     color: 'black',

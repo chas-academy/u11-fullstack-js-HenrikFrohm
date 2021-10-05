@@ -21,7 +21,7 @@ const App = () => {
 // utilizing material ui components
     return (
         <Container maxWidth="lg">
-            <AppBar className={classes.appBar} position="static" color="inherit">
+            <AppBar className={classes.appBar} position="static">
                 <Typography className={classes.heading} variant="h2" align="center">Kampsportsnytt
                 </Typography>
                 <img className={classes.image} src={boxing_glove} alt="glovesIcon" height="42" />

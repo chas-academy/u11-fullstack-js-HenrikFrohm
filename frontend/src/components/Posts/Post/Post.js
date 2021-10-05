@@ -31,7 +31,7 @@ const dispatch = useDispatch();
             </div>
                 <Typography className={classes.title} variant="h6">{post.title}</Typography>
             <CardContent>
-                <Typography className={classes.message} variant="h7">{post.message}</Typography>
+                <Typography className={classes.message} variant="body2">{post.message}</Typography>
             </CardContent>
             <CardActions className={classes.cardActions}>
                 <Button size="BUTTON TEXT" color="primary" onClick={() => dispatch(likePost(post._id))}>
