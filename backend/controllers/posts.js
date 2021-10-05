@@ -1,5 +1,5 @@
-import PostMessage from '../models/postMessage.js';
 import mongoose from 'mongoose';
+import PostMessage from '../models/postMessage.js';
 
 // Functions, some asynchronous, for routes, separating logic from routes/posts.js to avoid clutter when more routes get added.
 // Appropriate HTTP status code responses shows up based on try-catch statements.
@@ -38,3 +38,13 @@ export const updatePost = async (req, res) => {
 
     res.json(updatedPost);
     }
+
+export const deletePost = async (req, res) => {
+    const { id } = req.params;
+
+     if(!mongoose.Types.ObjectId.isValid(_id)) return res.status(404).send('No post with that id');
+
+     await PostMessage.findByIdAndRemove(id);
+
+     res.json('Post was deleted');
+}
