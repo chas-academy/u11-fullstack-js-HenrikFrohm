@@ -13,10 +13,10 @@ const App = () => {
     const classes = useStyles();
     const dispatch = useDispatch();
 
-// dispatch get-posts action with useEffect
+// dispatch get-posts action with useEffect. When clear function is called in forms the id will change, which will dispatch getPosts action so changes get new posts
     useEffect(() => {
         dispatch(getPosts());
-    }, [dispatch]);
+    }, [currentId, dispatch]);
     
 // utilizing material ui components
     return (
@@ -24,7 +24,7 @@ const App = () => {
             <AppBar className={classes.appBar} position="static" color="inherit">
                 <Typography className={classes.heading} variant="h2" align="center">Kampsportsnytt
                 </Typography>
-                <img className={classes.image} src={boxing_glove} alt="glovesIcon" height="55" />
+                <img className={classes.image} src={boxing_glove} alt="glovesIcon" height="42" />
             </AppBar>
             <Grow in>
                 <Container>

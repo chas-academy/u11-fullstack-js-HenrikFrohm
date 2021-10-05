@@ -8,17 +8,19 @@ import { createPost, updatePost } from '../../actions/posts';
 
 const Form = ({ currentId, setCurrentId }) => {
     const [postData, setPostData] = useState({ creator: '', title: '', message: '', tags:'', selectedFile:'' });
+//fetching post to update field with right values by using find method to get post with same id as current id.
     const post = useSelector((state) => currentId ? state.posts.find((p) => p._id === currentId) : null);
     const classes = useStyles();
     const dispatch = useDispatch();
 
-    //callback function runs when post value change from nothing to post
+    // callback function runs when post value change from nothing to post
     useEffect(() => {
         if(post) setPostData(post);
     }, [post])
 
     // when user submit a post request is sent with the typed data. Goes to reducers once dispatched.
     // preventDefault method used to avoid normal event of browser refresh
+    // clear function can be called while creating or editing forms
     const handleSubmit = (e) => {
         e.preventDefault();
 
@@ -27,13 +29,16 @@ const Form = ({ currentId, setCurrentId }) => {
         } else {
         dispatch(createPost(postData));
     }
+    clear();
 }
 
+// function to set everything to empty strings when clear button is pressed
    const clear = () => {
         setCurrentId(null);
         setPostData({ creator: '', title: '', message: '', tags:'', selectedFile:'' });
    }
 
+   
     return (
         <Paper className={classes.paper}>
             <form autoComplete="off" noValidate className={`${classes.root} ${classes.form}`} onSubmit={handleSubmit}>
