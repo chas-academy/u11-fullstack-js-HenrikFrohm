@@ -9,10 +9,10 @@
 
 <!-- PROJECT DESCRIPTION-->
 <br />
-  <h3 align="center">Kampsportsnytt</h3>
+  <h3 align="center">Fightstories</h3>
 
   <p align="center">
-     Kampsportsnytt is an information- and news hub for all combat-sport fans around the world. Here you can check out the latest news, interviews and stats for each of the big stars of the sports. We welcome you to our community, where you can share your thoughts in the comments section and subscribe to your favorite fighters to get up to date on future events involving them.
+     Fightstories is an hub for combat-sport fans around the world to share information- and news. Here you can check out and post the latest news, interviews and stats for each of the big stars of the sports. We welcome you to our community, where you can share your thoughts in the comments section and subscribe to your favorite fighters to get up to date on future events involving them.
     <br />
     <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
     <br />
