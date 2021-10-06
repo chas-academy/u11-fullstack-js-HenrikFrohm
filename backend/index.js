@@ -20,9 +20,9 @@ app.use(cors());
 // every route in post routes is going to start with prefix "/posts"
 app.use('/posts', postRoutes); 
 
-// get request test for Heroku
+// get request test for Heroku deployment
 app.get('/', (req, res) => {
-    res.send('Test');
+    res.send('Test'); 
 });
 
 // MongoDB database url stored and backend port stored in env
