@@ -7,7 +7,6 @@ import dotenv from 'dotenv';
 
 // initialize application, allowing methods
 const app = express();
-
 dotenv.config();
 
 // allowing requests to be sent properly.
