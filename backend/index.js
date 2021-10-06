@@ -22,7 +22,7 @@ app.use('/posts', postRoutes);
 
 // get request test for Heroku
 app.get('/', (req, res) => {
-    res.send('Test');
+    res.send('Test API');
 });
 
 // MongoDB database url stored and backend port stored in env
