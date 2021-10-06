@@ -4,6 +4,9 @@ import axios from 'axios';
 // url for backend route
 const url = 'http://localhost:5000/posts';
 
+// url for Heroku
+// const url = 'https://u11-project.herokuapp.com/posts';
+
 // call to url
 export const fetchPosts = () => axios.get(url);
 
