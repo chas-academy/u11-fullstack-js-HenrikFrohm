@@ -4,11 +4,9 @@ import { Container, Grow, Grid } from "@material-ui/core";
 import Posts from "../Posts/Posts";
 import Form from "../Form/Form";
 import { getPosts } from "../../actions/posts";
-import useStyles from "./styles";
 
 const Home = () => {
-  const [currentId, setCurrentId] = useState(null);
-  const classes = useStyles();
+  const [currentId, setCurrentId] = useState(0);
   const dispatch = useDispatch();
 
   // dispatch get-posts action with useEffect. When clear function is called in forms the id will change, which will dispatch getPosts action so changes get new posts
@@ -20,7 +18,6 @@ const Home = () => {
     <Grow in>
       <Container>
         <Grid
-          className={classes.mainContainer}
           container
           justifyContent="space-between"
           alignItems="stretch"
