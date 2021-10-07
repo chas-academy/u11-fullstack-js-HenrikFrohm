@@ -1,8 +1,8 @@
 // used to make api calls
-import axios from 'axios';
+import axios from "axios";
 
 // url for backend route
-const url = 'http://localhost:5000/posts';
+const url = "http://localhost:5000/posts";
 
 // url for Heroku
 // const url = 'https://u11-project.herokuapp.com/posts';
@@ -14,7 +14,8 @@ export const fetchPosts = () => axios.get(url);
 export const createPost = (newPost) => axios.post(url, newPost);
 
 // update post, id and url specified
-export const updatePost = (id, updatedPost) => axios.patch(`${url}/${id}`, updatedPost);
+export const updatePost = (id, updatedPost) =>
+  axios.patch(`${url}/${id}`, updatedPost);
 
 // delete post
 export const deletePost = (id) => axios.delete(`${url}/${id}`);
