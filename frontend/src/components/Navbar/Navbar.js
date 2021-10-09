@@ -2,11 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { AppBar, Avatar, Button, Toolbar, Typography } from "@material-ui/core";
 import useStyles from "./styles";
-import boxing_glove from "../../images/boxing_glove.png";
+import boxing from "../../images/boxing.png";
 
 const Navbar = () => {
   const classes = useStyles();
   const user = null;
+
   // under toolbar if a user is logged in then user information and logout button will be shown, if not only loginbutton will be shown.
   return (
     <AppBar className={classes.appBar} position="static">
@@ -22,7 +23,7 @@ const Navbar = () => {
         </Typography>
         <img
           className={classes.image}
-          src={boxing_glove}
+          src={boxing}
           alt="glovesIcon"
           height="42"
         />
@@ -45,7 +46,7 @@ const Navbar = () => {
               className={classes.logout}
               color="secondary"
             >
-              Logout
+              Sign out
             </Button>
           </div>
         ) : (
@@ -55,7 +56,7 @@ const Navbar = () => {
             variant="contained"
             color="primary"
           >
-            Log in
+            Sign in
           </Button>
         )}
       </Toolbar>
