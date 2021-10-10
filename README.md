@@ -1,12 +1,3 @@
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
-
-
-
 <!-- PROJECT DESCRIPTION-->
 <br />
   <h3 align="center">Fightstories</h3>
@@ -94,22 +85,31 @@ This is an example of how to list things you need to use the software and how to
    ```
 
 
+<!-- REQUIREMENTS -->
+### Requirement specification
 
-<!-- USAGE EXAMPLES -->
-## Usage
+### Non-functional requirements
+* The application must provide a RESTful API
+* The application must work in all modern browsers
+* The application must be responsive
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+### Functional requirements
+* A user must be able to register an account
+* A user must be able to login to their account
+* A user must be able to search in the application
+* An administrative user must be able to log in to a basic dashboard and create/update/delete users
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+### Bonus requirements
+* An administrative user should be able to set permissions based on user roles
+* An administrative user should be able to create/read/update/delete user roles
+* An administrative user should be able to send out emails from the admin dashboard
 
-
+_For more examples, please refer to the [Documentation](https://docs.google.com/document/d/1J2uC24e3qyB1vx0d1tDZspw5KQtstBlE/edit?usp=sharing&ouid=116450704019366372650&rtpof=true&sd=true)
 
 <!-- ROADMAP -->
 ## Roadmap
 
 See the [open issues](https://github.com/github_username/repo_name/issues) for a list of proposed features (and known issues).
-
-
 
 <!-- CONTRIBUTING -->
 ## Contributing
@@ -122,45 +122,15 @@ Contributions are what make the open source community such an amazing place to l
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-
-
 <!-- LICENSE -->
 ## License
 
 Distributed under the MIT License. See `LICENSE` for more information.
 
-
-
 <!-- CONTACT -->
 ## Contact
 
-Henrik Frohm - henrik.frohm@chasacademy.se
+Author: Henrik Frohm
+Email: henrik.frohm@chasacademy.se
+Linkedin: [https://www.linkedin.com/in/henrik-frohm-7ab764207]
 Project Link: [https://github.com/chas-academy/u11-fullstack-js-HenrikFrohm)
-
-
-
-<!-- ACKNOWLEDGEMENTS 
-## Acknowledgements
-
-* []()
-* []()
-* []()
--->
-
-
-
-
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/github_username/repo.svg?style=for-the-badge
-[contributors-url]: https://github.com/github_username/repo_name/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/github_username/repo.svg?style=for-the-badge
-[forks-url]: https://github.com/github_username/repo_name/network/members
-[stars-shield]: https://img.shields.io/github/stars/github_username/repo.svg?style=for-the-badge
-[stars-url]: https://github.com/github_username/repo_name/stargazers
-[issues-shield]: https://img.shields.io/github/issues/github_username/repo.svg?style=for-the-badge
-[issues-url]: https://github.com/github_username/repo_name/issues
-[license-shield]: https://img.shields.io/github/license/chas-academy/u11-fullstack-js-HenrikFrohm.svg?style=for-the-badge
-[license-url]: https://github.com/chas-academy/u11-fullstack-js-HenrikFrohm/blob/master/LICENSE.md
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://www.linkedin.com/in/henrik-frohm-7ab764207/
