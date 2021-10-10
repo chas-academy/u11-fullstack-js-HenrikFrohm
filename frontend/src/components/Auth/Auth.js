@@ -14,8 +14,9 @@ import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import useStyles from "./styles";
 import Icon from "./Icon";
 import Input from "./Input";
+import { signin, signup } from "../../actions/auth";
 
-// initial state of form data
+// initial values for state fields
 const initialState = {
   firstName: "",
   lastName: "",
@@ -28,13 +29,30 @@ const Auth = () => {
   const classes = useStyles();
   const [showPassword, setShowPassword] = useState(false);
   const [isSignup, setIsSignup] = useState(false);
-  const [formData, setFormData] = useState();
+  const [formData, setFormData] = useState(initialState);
   const dispatch = useDispatch();
   const history = useHistory();
 
   //cubic function to handle showing password
   const handleShowPassword = () =>
     setShowPassword((prevShowPassword) => !prevShowPassword);
+
+  // prevent reload event
+  // handle sign up and sign in by passing data and history
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    //    if (isSignup) {
+    //      dispatch(signup(formData, history));
+    //    } else {
+    //      dispatch(signin(formData, history));
+    //    }
+  };
+
+  // update specific input that is being managed, done dynamically. Spread properties, but only change to current input with target value.
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
   // cubic function to switch between sign up or sign in form
   const switchMode = () => {
@@ -44,7 +62,7 @@ const Auth = () => {
 
   // chaining operator used to avoid error if the res object isn't available, instead giving undefined as result value
   // get token
-  // try catch is used to dispatch or catch for async function. Success result in redirect to homepage.
+  // try catch is used to dispatch or catch for async function. Success results in a redirect to the homepage.
   const gLoginSuccess = async (res) => {
     const result = res?.profileObj;
     const token = res?.tokenId;
@@ -59,14 +77,6 @@ const Auth = () => {
   const gLoginFailure = () => {
     console.log("Google sign in was unsuccessful, try again.");
   };
-
-  // prevent reload event
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    console.log(formData);
-  };
-  const handleChange = () => {};
 
   return (
     <Container component="main" maxWidth="xs">

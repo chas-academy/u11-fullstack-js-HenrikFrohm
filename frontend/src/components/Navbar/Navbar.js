@@ -14,8 +14,8 @@ const Navbar = () => {
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")));
 
   // dispatch action to allow user to sign out and getting re-navigated to home. When logged out, user is set to null.
-  const signout = () => {
-    dispatch({ type: "SIGNOUT" });
+  const logout = () => {
+    dispatch({ type: "LOGOUT" });
     history.push("/");
     setUser(null);
   };
@@ -62,9 +62,9 @@ const Navbar = () => {
             </Typography>
             <Button
               variant="contained"
-              className={classes.signout}
+              className={classes.logout}
               color="secondary"
-              onClick={signout}
+              onClick={logout}
             >
               Sign out
             </Button>
