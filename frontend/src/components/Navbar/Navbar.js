@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { AppBar, Avatar, Button, Toolbar, Typography } from "@material-ui/core";
 import useStyles from "./styles";
@@ -6,7 +6,15 @@ import boxing from "../../images/boxing.png";
 
 const Navbar = () => {
   const classes = useStyles();
-  const user = null;
+  // fetch user data from localstorage
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")));
+  // get re-navigated to homescreen after successful login
+  useEffect(() => {
+    const token = user?.token;
+
+    // jwt
+    setUser(JSON.parse(localStorage.getItem("profile")));
+  }, []);
 
   // under toolbar if a user is logged in then user information and logout button will be shown, if not only loginbutton will be shown.
   return (

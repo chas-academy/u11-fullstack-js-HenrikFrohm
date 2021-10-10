@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { GoogleLogin } from "react-google-login";
+import { useHistory } from "react-router-dom";
 import {
   Avatar,
   Button,
@@ -29,6 +30,7 @@ const Auth = () => {
   const [isSignup, setIsSignup] = useState(false);
   const [formData, setFormData] = useState();
   const dispatch = useDispatch();
+  const history = useHistory();
 
   //cubic function to handle showing password
   const handleShowPassword = () =>
@@ -42,13 +44,14 @@ const Auth = () => {
 
   // chaining operator used to avoid error if the res object isn't available, instead giving undefined as result value
   // get token
-  // try catch is used to dispatch or catch for async function
+  // try catch is used to dispatch or catch for async function. Success result in redirect to homepage.
   const gLoginSuccess = async (res) => {
     const result = res?.profileObj;
     const token = res?.tokenId;
 
     try {
       dispatch({ type: "AUTH", data: { result, token } });
+      history.push("/");
     } catch (error) {
       console.log(error);
     }
