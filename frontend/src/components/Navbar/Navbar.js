@@ -1,20 +1,31 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { Link, useHistory, useLocation } from "react-router-dom";
 import { AppBar, Avatar, Button, Toolbar, Typography } from "@material-ui/core";
 import useStyles from "./styles";
 import boxing from "../../images/boxing.png";
 
 const Navbar = () => {
   const classes = useStyles();
+  const dispatch = useDispatch();
+  const history = useHistory();
+  const location = useLocation();
   // fetch user data from localstorage
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")));
-  // get re-navigated to homescreen after successful login
+
+  // dispatch action to allow user to sign out and getting re-navigated to home. When logged out, user is set to null.
+  const signout = () => {
+    dispatch({ type: "SIGNOUT" });
+    history.push("/");
+    setUser(null);
+  };
+
+  // when location changes user gets sent
   useEffect(() => {
     const token = user?.token;
 
-    // jwt
     setUser(JSON.parse(localStorage.getItem("profile")));
-  }, []);
+  }, [location]);
 
   // under toolbar if a user is logged in then user information and logout button will be shown, if not only loginbutton will be shown.
   return (
@@ -51,8 +62,9 @@ const Navbar = () => {
             </Typography>
             <Button
               variant="contained"
-              className={classes.logout}
+              className={classes.signout}
               color="secondary"
+              onClick={signout}
             >
               Sign out
             </Button>
