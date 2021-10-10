@@ -57,9 +57,9 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
+The goal of the task is to demonstrate my programming knowledge and skills to go from an idea and concept phase to a complete application in a limited timeframe. 
 
-
-
+This assignment should demonstrate understanding of, application, and use of a RESTful API in node with JWT-based authentication with the MongoDB document database.
 
 
 ### Built With
@@ -68,8 +68,6 @@
 * [Node.js]()
 * [Express]()
 * [MongoDB]()
-
-
 
 <!-- GETTING STARTED -->
 ## Getting Started
