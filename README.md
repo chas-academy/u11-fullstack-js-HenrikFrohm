@@ -16,8 +16,6 @@
   </p>
 </p>
 
-
-
 <!-- TABLE OF CONTENTS -->
 <details open="open">
   <summary><h2 style="display: inline-block">Table of Contents</h2></summary>
@@ -35,23 +33,19 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
+    <li><a href="#requirement-specification">Requirement specification</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#https://github.com/HenrikFrohm/u11-project/blob/master/LICENSE.md">License</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgements">Acknowledgements</a></li>
   </ol>
 </details>
-
-
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 The goal of the task is to demonstrate my programming knowledge and skills to go from an idea and concept phase to a complete application in a limited timeframe. 
 
 This assignment should demonstrate understanding of, application, and use of a RESTful API in node with JWT-based authentication with the MongoDB document database.
-
 
 ### Built With
 
@@ -72,7 +66,7 @@ This is an example of how to list things you need to use the software and how to
   ```sh
   npm install npm@latest -g
   ```
-
+  
 ### Installation
 
 1. Clone the repo
@@ -83,8 +77,7 @@ This is an example of how to list things you need to use the software and how to
    ```sh
    npm install
    ```
-
-
+   
 <!-- REQUIREMENTS -->
 ### Requirement specification
 
@@ -110,17 +103,6 @@ _For more examples, please refer to the [Documentation](https://docs.google.com/
 ## Roadmap
 
 See the [open issues](https://github.com/github_username/repo_name/issues) for a list of proposed features (and known issues).
-
-<!-- CONTRIBUTING -->
-## Contributing
-
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
 
 <!-- LICENSE -->
 ## License
