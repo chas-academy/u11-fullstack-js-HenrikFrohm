@@ -2,7 +2,7 @@
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][LICENSE.md]
+[![MIT License][license-shield]][https://github.com/chas-academy/u11-fullstack-js-HenrikFrohm/blob/master/LICENSE.md]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
 
