@@ -2,7 +2,7 @@
 import bcrypt from "bcryptjs";
 // used to safely store users in browser for an certain amount of time so they can stay online
 import jwt from "jsonwebtoken";
-import User from "../models/user";
+import User from "../models/user.js";
 
 // Signin and signup asynchronous functions. Sent post-data will be available in request body.
 // Trycatch to see if there's an existing user and correct password, granting json web token.
