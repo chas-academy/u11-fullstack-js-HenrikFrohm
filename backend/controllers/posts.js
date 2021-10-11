@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 import PostMessage from "../models/postMessage.js";
+import router from "../routes/posts.js";
 
 // Functions, some asynchronous, for routes, separating logic from routes/posts.js to avoid clutter when more routes get added.
 // Appropriate HTTP status code responses shows up based on try-catch statements.
@@ -53,18 +54,29 @@ export const deletePost = async (req, res) => {
   res.json("Post was deleted");
 };
 
+// Identified users can only like posts once. If no id for likes are found in index for user id, then it can be pushed.
 export const likePost = async (req, res) => {
   const { id } = req.params;
+
+  if (!req.userId) return res.json({ message: "Not authenticated." });
 
   if (!mongoose.Types.ObjectId.isValid(id))
     return res.status(404).send("No post with that id");
 
   const post = await PostMessage.findById(id);
-  const updatedPost = await PostMessage.findByIdAndUpdate(
-    id,
-    { likeCount: post.likeCount + 1 },
-    { new: true }
-  );
+
+  const index = post.likes.findIndex((id) => id === String(req.userId));
+  if (index === -1) {
+    post.likes.push(req.userId);
+  } else {
+    post.likes = post.likes.filter((id) => id !== String(req.userId));
+  }
+
+  const updatedPost = await PostMessage.findByIdAndUpdate(id, post, {
+    new: true,
+  });
 
   res.json(updatedPost);
 };
+
+export default router;
