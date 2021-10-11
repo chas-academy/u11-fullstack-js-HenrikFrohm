@@ -38,15 +38,15 @@ const Auth = () => {
     setShowPassword((prevShowPassword) => !prevShowPassword);
 
   // prevent reload event
-  // handle sign up and sign in by passing data and history
+  // dispatching sign up and sign in actions by giving data and history.
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    //    if (isSignup) {
-    //      dispatch(signup(formData, history));
-    //    } else {
-    //      dispatch(signin(formData, history));
-    //    }
+    if (isSignup) {
+      dispatch(signup(formData, history));
+    } else {
+      dispatch(signin(formData, history));
+    }
   };
 
   // update specific input that is being managed, done dynamically. Spread properties, but only change to current input with target value.
@@ -57,7 +57,7 @@ const Auth = () => {
   // cubic function to switch between sign up or sign in form
   const switchMode = () => {
     setIsSignup((prevIsSignup) => !prevIsSignup);
-    handleShowPassword(false);
+    setShowPassword(false);
   };
 
   // chaining operator used to avoid error if the res object isn't available, instead giving undefined as result value
