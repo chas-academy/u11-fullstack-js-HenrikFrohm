@@ -3,6 +3,7 @@ import bodyParser from "body-parser";
 import cors from "cors";
 import mongoose from "mongoose";
 import postRoutes from "./routes/posts.js";
+import userRoutes from "./routes/users.js";
 import dotenv from "dotenv";
 
 // initialize application, allowing methods
@@ -18,6 +19,8 @@ app.use(cors());
 
 // every route in post routes is going to start with prefix "/posts"
 app.use("/posts", postRoutes);
+
+app.use("/user", userRoutes);
 
 // get request test for Heroku deployment
 app.get("/", (req, res) => {
