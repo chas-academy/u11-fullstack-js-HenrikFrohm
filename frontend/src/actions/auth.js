@@ -1,4 +1,4 @@
-import * as api from "../api";
+import * as api from "../api/index.js";
 
 // history push to redirect to home
 export const signin = (formData, history) => async (dispatch) => {

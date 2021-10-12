@@ -4,6 +4,17 @@ import axios from "axios";
 // axios instance
 const API = axios.create({ baseURL: "http://localhost:5000" });
 
+// sends token to backend middleware to verify logged in user
+API.interceptors.request.use((req) => {
+  if (localStorage.getItem("profile")) {
+    req.headers.Authorization = `Bearer ${
+      JSON.parse(localStorage.getItem("profile")).token
+    }`;
+  }
+
+  return req;
+});
+
 // url for backend route
 // const url = "http://localhost:5000/posts";
 
