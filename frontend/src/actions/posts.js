@@ -1,5 +1,5 @@
 // import everything from actions as api, making calls easier
-import * as api from "../api";
+import * as api from "../api/index.js";
 
 // action creator asynchronous function that returns an action-object, which contains a type and a payload
 // using redux thunk to specify additional arrow-function
@@ -48,10 +48,12 @@ export const deletePost = (id) => async (dispatch) => {
 
 // api request returning updated post data for likes
 export const likePost = (id) => async (dispatch) => {
-  try {
-    const { data } = await api.likePost(id);
+  const user = JSON.parse(localStorage.getItem("profile"));
 
-    dispatch({ type: "UPDATE", payload: data });
+  try {
+    const { data } = await api.likePost(id, user?.token);
+
+    dispatch({ type: "LIKE", payload: data });
   } catch (error) {
     console.log(error);
   }
