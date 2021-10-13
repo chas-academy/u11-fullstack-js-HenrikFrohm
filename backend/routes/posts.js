@@ -1,13 +1,20 @@
-import express from 'express';
-import { getPosts, createPost, updatePost, deletePost, likePost } from '../controllers/posts.js'
-
+import express from "express";
+import {
+  getPosts,
+  createPost,
+  updatePost,
+  deletePost,
+  likePost,
+} from "../controllers/posts.js";
+import auth from "../middleware/auth.js";
 const router = express.Router();
 
 // Defining router using express methods that correspond to HTTP methods, like get, post and update/patch.
-router.get('/', getPosts);
-router.post('/', createPost);
-router.patch('/:id', updatePost);
-router.delete('/:id', deletePost);
-router.patch('/:id/likePost', likePost);
+// Restricting certain actions to auth users
+router.get("/", getPosts);
+router.post("/", auth, createPost);
+router.patch("/:id", auth, updatePost);
+router.delete("/:id", auth, deletePost);
+router.patch("/:id/likePost", auth, likePost);
 
 export default router;
