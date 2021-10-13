@@ -7,7 +7,6 @@ import { createPost, updatePost } from "../../actions/posts";
 
 const Form = ({ currentId, setCurrentId }) => {
   const [postData, setPostData] = useState({
-    creator: "",
     title: "",
     message: "",
     tags: "",
@@ -15,42 +14,55 @@ const Form = ({ currentId, setCurrentId }) => {
   });
   //fetching post to update field with right values by using find method to get post with same id as current id.
   const post = useSelector((state) =>
-    currentId ? state.posts.find((p) => p._id === currentId) : null
+    currentId ? state.posts.find((message) => message._id === currentId) : null
   );
   const classes = useStyles();
   const dispatch = useDispatch();
+  const user = JSON.parse(localStorage.getItem("profile"));
 
   // callback function runs when post value change from nothing to post
   useEffect(() => {
     if (post) setPostData(post);
   }, [post]);
 
-  // when user submit a post request is sent with the typed data. Goes to reducers once dispatched.
-  // preventDefault method used to avoid normal event of browser refresh
-  // clear function can be called while creating or editing forms
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    if (currentId) {
-      dispatch(updatePost(currentId, postData));
-    } else {
-      dispatch(createPost(postData));
-    }
-
-    clear();
-  };
-
   // function to set everything to empty strings when clear button is pressed
   const clear = () => {
-    setCurrentId(null);
+    setCurrentId(0);
     setPostData({
-      creator: "",
       title: "",
       message: "",
       tags: "",
       selectedFile: "",
     });
   };
+
+  // when user submit a post request is sent with the typed data. Goes to reducers once dispatched.
+  // preventDefault method used to avoid normal event of browser refresh
+  // clear function can be called while creating or editing forms
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (currentId === 0) {
+      dispatch(createPost({ ...postData, name: user?.result?.name }));
+    } else {
+      dispatch(
+        updatePost(currentId, { ...postData, name: user?.result?.name })
+      );
+      clear();
+    }
+  };
+
+  // if no logged in users, get message
+
+  if (!user?.result?.name) {
+    return (
+      <Paper className={classes.paper}>
+        <Typography variant="h6" align="center">
+          Sign in to create posts/articles.
+        </Typography>
+      </Paper>
+    );
+  }
 
   return (
     <Paper className={classes.paper}>
@@ -63,16 +75,6 @@ const Form = ({ currentId, setCurrentId }) => {
         <Typography variant="h6">
           {currentId ? "Edit" : "Add"} Post/Article
         </Typography>
-        <TextField
-          name="creator"
-          variant="outlined"
-          label="Creator"
-          fullWidth
-          value={postData.creator}
-          onChange={(e) =>
-            setPostData({ ...postData, creator: e.target.value })
-          }
-        />
         <TextField
           name="title"
           variant="outlined"
