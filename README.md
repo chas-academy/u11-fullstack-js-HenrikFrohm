@@ -103,9 +103,11 @@ Then save the URI string, and replace the password with a password of your choic
    ```
 
 Create a .env file in the root folder. Add the environment variables that is presented in the .env.example file to the .env file:
-
-PORT:
-CONNECTION_URL:
+  
+ ```sh
+ PORT:
+ CONNECTION_URL:
+ ```
 
 Provide the saved MONGO URI string you received from your MongoDB cluster in CONNECTION_URL.
 
