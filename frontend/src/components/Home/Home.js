@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { Container, Grow, Grid } from "@material-ui/core";
+import { Container, Grow, Grid, Paper } from "@material-ui/core";
 import Posts from "../Posts/Posts";
 import Form from "../Form/Form";
+import Pagination from "../Pagination/Pagination";
 import { getPosts } from "../../actions/posts";
 
 const Home = () => {
@@ -14,6 +15,7 @@ const Home = () => {
     dispatch(getPosts());
   }, [currentId, dispatch]);
 
+  // utilizing grids for form and post components with suitable alignment for different screen sizes. Components are connected to signed in user.
   return (
     <Grow in>
       <Container>
@@ -25,6 +27,9 @@ const Home = () => {
         >
           <Grid item xs={12} sm={6} md={4}>
             <Form currentId={currentId} setCurrentId={setCurrentId} />
+            <Paper elevation={6}>
+              <Pagination />
+            </Paper>
           </Grid>
           <Grid item xs={12} sm={12} md={8}>
             <Posts setCurrentId={setCurrentId} />
