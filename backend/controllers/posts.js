@@ -27,6 +27,11 @@ export const getPost = async (req, res) => {
   }
 };
 
+export const searchPosts = async (req, res) => {
+  try {
+  } catch (error) {}
+};
+
 export const createPost = async (req, res) => {
   const post = req.body;
 

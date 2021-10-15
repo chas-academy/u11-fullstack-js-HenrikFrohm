@@ -24,6 +24,14 @@ API.interceptors.request.use((req) => {
 // call to url
 export const fetchPosts = () => API.get("/posts");
 
+// search post
+export const fetchsearchPosts = (searchQuery) =>
+  API.get(
+    `/posts/search?searchQuery=${searchQuery.search || "none"}&tags=${
+      searchQuery.tags
+    }`
+  );
+
 //create post request
 export const createPost = (newPost) => API.post("/posts", newPost);
 
