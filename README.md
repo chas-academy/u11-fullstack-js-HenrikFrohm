@@ -86,7 +86,14 @@ This is an example of how to list things you need to use the software and how to
 
 ### Installation
 
-1. Clone the repo
+1. Register an account on https://mongodb.com and create a MongoDB cluster.
+
+Create a project and a free shared database, then click on Connect and choose "Connect your application". 
+Set Driver is set to Node.js.
+
+Then save the URI string, and replace the password with a password of your choice, and replace myFirstDatabase with the name you want your database to have.
+
+2. Clone the repo
    ```sh
    git clone https://github.com/HenrikFrohm/u11-project.git
    ```
@@ -95,6 +102,16 @@ This is an example of how to list things you need to use the software and how to
    npm install
    ```
 
+Create a .env file in the root folder. Add the environment variables that is presented in the .env.example file to the .env file:
+  
+ ```sh
+ PORT:
+ CONNECTION_URL:
+ ```
+
+Provide the saved MONGO URI string you received from your MongoDB cluster in CONNECTION_URL.
+
+Default PORT is 5000, but you can set it to whatever you want.
 
 
 <!-- USAGE EXAMPLES -->
