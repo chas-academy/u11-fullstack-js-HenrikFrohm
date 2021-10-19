@@ -95,7 +95,7 @@ Then save the URI string, and replace the password with a password of your choic
 
 2. Clone the repo
    ```sh
-   git clone https://github.com/HenrikFrohm/u11-project.git
+   git clone https://github.com/chas-academy/u11-fullstack-js-HenrikFrohm
    ```
 2. Install NPM packages
    ```sh
