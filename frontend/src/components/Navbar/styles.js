@@ -9,7 +9,7 @@ export default makeStyles((theme) => ({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    padding: "10px 50px",
+    padding: "5px 50px",
     backgroundColor: "white",
   },
   heading: {
@@ -22,7 +22,7 @@ export default makeStyles((theme) => ({
   toolbar: {
     display: "flex",
     justifyContent: "flex-end",
-    width: "400px",
+    width: "300px",
   },
   profile: {
     display: "flex",

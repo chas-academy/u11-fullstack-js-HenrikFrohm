@@ -27,9 +27,21 @@ export const getPost = async (req, res) => {
   }
 };
 
-export const searchPosts = async (req, res) => {
+export const getPostsBySearch = async (req, res) => {
+  const { searchQuery, tags } = req.query;
+
   try {
-  } catch (error) {}
+    // converting title to regular expression to simplify for mongoose and mongodb to search the db. Including ignore case to make all posts that match search term show up.
+    const title = new RegExp(searchQuery, "i");
+    // find all posts in db that match either title and/or tag- criterias.
+    const posts = await PostMessage.find({
+      $or: [{ title }, { tags: { $in: tags.split(",") } }],
+    });
+
+    res.json({ data: posts });
+  } catch (error) {
+    res.status(404).json({ message: error.message });
+  }
 };
 
 export const createPost = async (req, res) => {

@@ -14,7 +14,7 @@ import {
 import Posts from "../Posts/Posts";
 import Form from "../Form/Form";
 import Pagination from "../Pagination/Pagination";
-import { getPosts, searchPosts } from "../../actions/posts";
+import { getPosts, getPostsBySearch } from "../../actions/posts";
 import useStyles from "./styles";
 
 function useQuery() {
@@ -27,12 +27,12 @@ const Home = () => {
   const classes = useStyles();
   // page info query
   const query = useQuery();
+  const searchQuery = query.get("searchQuery");
   const history = useHistory();
   // read url to see if there's a page parameter. That will populate variable. If not, it will default to 1.
   const page = query.get("page") || 1;
-  const searchQuery = query.get("searchQuery");
   const [search, setSearch] = useState("");
-  const [tags, setTags] = useState("");
+  const [tags, setTags] = useState([]);
   // dispatch get-posts action with useEffect. When clear function is called in forms the id will change, which will dispatch getPosts action so changes get new posts
   useEffect(() => {
     dispatch(getPosts());
@@ -40,8 +40,11 @@ const Home = () => {
 
   // dispatching to fetch search post if there's a search term. If not, redirect.
   const searchPost = () => {
-    if (search.trim()) {
-      dispatch(searchPosts({ search, tags: tags.join(",") }));
+    if (search.trim() || tags) {
+      dispatch(getPostsBySearch({ search, tags: tags.join(",") }));
+      history.push(
+        `/posts/search?searchQuery=${search || "none"}&tags=${tags.join(",")}`
+      );
     } else {
       history.push("/");
     }
