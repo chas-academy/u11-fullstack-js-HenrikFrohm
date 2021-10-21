@@ -39,6 +39,7 @@ const Home = () => {
   }, [currentId, dispatch]);
 
   // dispatching to fetch search post if there's a search term. If not, redirect.
+  // pushing website to specific url
   const searchPost = () => {
     if (search.trim() || tags) {
       dispatch(getPostsBySearch({ search, tags: tags.join(",") }));
