@@ -5,10 +5,14 @@ import * as api from "../api/index.js";
 // using redux thunk to specify additional arrow-function
 // try-catch function to get response from api, which contains data-object returning from backend. Data represents posts.
 // using redux to dispatch an action from data in backend. Data is sent through payload to reducer.
-export const getPosts = () => async (dispatch) => {
+
+// fetching posts for specific page
+export const getPosts = (page) => async (dispatch) => {
   try {
-    const { data } = await api.fetchPosts();
+    dispatch({ type: "START_LOADING" });
+    const { data } = await api.fetchPosts(page);
     dispatch({ type: "FETCH_ALL", payload: data });
+    dispatch({ type: "END_LOADING" });
   } catch (error) {
     console.log(error.message);
   }
@@ -16,10 +20,12 @@ export const getPosts = () => async (dispatch) => {
 
 export const getPostsBySearch = (searchQuery) => async (dispatch) => {
   try {
+    dispatch({ type: "START_LOADING" });
     const {
       data: { data },
     } = await api.fetchPostsBySearch(searchQuery);
     dispatch({ type: "FETCH_SEARCH", payload: data });
+    dispatch({ type: "END_LOADING" });
   } catch (error) {
     console.log(error);
   }
@@ -28,6 +34,7 @@ export const getPostsBySearch = (searchQuery) => async (dispatch) => {
 // try-catch function for post api request action
 export const createPost = (post) => async (dispatch) => {
   try {
+    dispatch({ type: "START_LOADING" });
     const { data } = await api.createPost(post);
     dispatch({ type: "CREATE", payload: data });
   } catch (error) {

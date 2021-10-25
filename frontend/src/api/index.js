@@ -21,8 +21,8 @@ API.interceptors.request.use((req) => {
 // url for Heroku
 // const url = 'https://u11-project.herokuapp.com/posts';
 
-// call to url
-export const fetchPosts = () => API.get("/posts");
+// call to specific page url
+export const fetchPosts = (page) => API.get(`/posts?page=${page}`);
 
 // search post
 export const fetchPostsBySearch = (searchQuery) =>

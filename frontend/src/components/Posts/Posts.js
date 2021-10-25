@@ -5,13 +5,13 @@ import Post from "./Post/Post";
 import useStyles from "./styles";
 
 const Posts = ({ setCurrentId }) => {
-  const posts = useSelector((state) => state.posts);
+  const { posts } = useSelector((state) => state.posts);
   const classes = useStyles();
 
   //    console.log(posts);
   return (
     // if there's no post length value other than 0, return grid
-    !posts.length ? (
+    !posts?.length ? (
       <CircularProgress />
     ) : (
       <Grid
