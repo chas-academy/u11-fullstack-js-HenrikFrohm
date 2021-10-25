@@ -38,23 +38,17 @@ const Navbar = () => {
   // under toolbar if a user is logged in then user information and logout button will be shown, if not only loginbutton will be shown.
   return (
     <AppBar className={classes.appBar} position="static">
-      <div className={classes.brandContainer}>
-        <Typography
-          component={Link}
-          to="/"
-          className={classes.heading}
-          variant="h3"
-          align="center"
-        >
-          Fightstories
+      <Link to="/" className={classes.brandContainer}>
+        <Typography className={classes.heading} align="center">
+          FIGHTSTORIES
         </Typography>
         <img
           className={classes.image}
           src={boxing}
           alt="glovesIcon"
-          height="42"
+          height="25"
         />
-      </div>
+      </Link>
       <Toolbar className={classes.toolbar}>
         {user ? (
           <div className={classes.profile}>
