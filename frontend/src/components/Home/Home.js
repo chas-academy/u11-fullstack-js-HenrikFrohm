@@ -33,10 +33,6 @@ const Home = () => {
   const page = query.get("page") || 1;
   const [search, setSearch] = useState("");
   const [tags, setTags] = useState([]);
-  // dispatch get-posts action with useEffect. When clear function is called in forms the id will change, which will dispatch getPosts action so changes get new posts
-  useEffect(() => {
-    dispatch(getPosts());
-  }, [currentId, dispatch]);
 
   // dispatching to fetch search post if there's a search term. If not, redirect.
   // pushing website to specific url
