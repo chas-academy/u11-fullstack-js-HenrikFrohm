@@ -27,10 +27,10 @@ const Home = () => {
   const classes = useStyles();
   // page info query
   const query = useQuery();
-  const searchQuery = query.get("searchQuery");
   const history = useHistory();
   // read url to see if there's a page parameter. That will populate variable. If not, it will default to 1.
   const page = query.get("page") || 1;
+  const searchQuery = query.get("searchQuery");
   const [search, setSearch] = useState("");
   const [tags, setTags] = useState([]);
 
@@ -105,7 +105,7 @@ const Home = () => {
             </AppBar>
             <Form currentId={currentId} setCurrentId={setCurrentId} />
             <Paper elevation={6}>
-              <Pagination />
+              <Pagination page={page} />
             </Paper>
           </Grid>
           <Grid item xs={12} sm={12} md={8}>
