@@ -5,13 +5,14 @@ import Post from "./Post/Post";
 import useStyles from "./styles";
 
 const Posts = ({ setCurrentId }) => {
-  const { posts } = useSelector((state) => state.posts);
+  const { posts, isLoading } = useSelector((state) => state.posts);
   const classes = useStyles();
 
-  //    console.log(posts);
+  // if there's no posts in array and isLoading isn't active, return string
+  if (!posts.length && !isLoading) return "No posts available";
   return (
-    // if there's no post length value other than 0, return grid
-    !posts?.length ? (
+    // if isLoading is active, show circularprogress, the loading state, then return grid
+    isLoading ? (
       <CircularProgress />
     ) : (
       <Grid

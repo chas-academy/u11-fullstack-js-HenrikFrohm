@@ -2,28 +2,25 @@ import React, { useEffect, useState } from "react";
 import { TextField, Button, Typography, Paper } from "@material-ui/core";
 import FileBase from "react-file-base64";
 import { useDispatch, useSelector } from "react-redux";
-import useStyles from "./styles";
 import { createPost, updatePost } from "../../actions/posts";
+import useStyles from "./styles";
 
 const Form = ({ currentId, setCurrentId }) => {
   const [postData, setPostData] = useState({
     title: "",
     message: "",
-    tags: "",
+    tags: [],
     selectedFile: "",
   });
   //fetching post to update field with right values by using find method to get post with same id as current id.
   const post = useSelector((state) =>
-    currentId ? state.posts.find((message) => message._id === currentId) : null
+    currentId
+      ? state.posts.posts.find((message) => message._id === currentId)
+      : null
   );
   const classes = useStyles();
   const dispatch = useDispatch();
   const user = JSON.parse(localStorage.getItem("profile"));
-
-  // callback function runs when post value change from nothing to post
-  useEffect(() => {
-    if (post) setPostData(post);
-  }, [post]);
 
   // function to set everything to empty strings when clear button is pressed
   const clear = () => {
@@ -35,6 +32,11 @@ const Form = ({ currentId, setCurrentId }) => {
       selectedFile: "",
     });
   };
+
+  // callback function runs when post value change from nothing to post
+  useEffect(() => {
+    if (post) setPostData(post);
+  }, [post]);
 
   // when user submit a post request is sent with the typed data. Goes to reducers once dispatched.
   // preventDefault method used to avoid normal event of browser refresh
