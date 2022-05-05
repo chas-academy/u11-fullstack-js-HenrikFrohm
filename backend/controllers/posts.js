@@ -34,6 +34,7 @@ export const getPosts = async (req, res) => {
       .limit(LIMIT)
       .skip(startIndex);
 
+    //passing new object to frontend. Data is equal to posts, currentPage to number of the page and numberOfPages is equal to total / LIMIT
     res.json({
       data: posts,
       currentPage: Number(page),

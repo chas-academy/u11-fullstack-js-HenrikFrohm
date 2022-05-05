@@ -17,7 +17,7 @@ const Paginate = ({ page }) => {
     }
   }, [dispatch, page]);
 
-  // using Pagination component, currently static, and importing it in home-component
+  // using Pagination component and importing it in home-component
   return (
     <Pagination
       classes={{ ul: classes.ul }}
