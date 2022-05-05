@@ -35,7 +35,7 @@ const Home = () => {
   const [search, setSearch] = useState("");
   const [tags, setTags] = useState([]);
 
-  // dispatching to fetch search post if there's a search term. If not, redirect.
+  // dispatching to fetch search post if there's a search term or tag. If not, redirect.
   // pushing website to specific url
   const searchPost = () => {
     if (search.trim() || tags) {

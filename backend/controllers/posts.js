@@ -5,11 +5,23 @@ import PostMessage from "../models/postMessage.js";
 
 const router = express.Router();
 
+export const getPost = async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    const post = await PostMessage.findById(id);
+
+    res.status(200).json(post);
+  } catch (error) {
+    res.status(404).json({ message: error.message });
+  }
+};
+
 export const getPosts = async (req, res) => {
   // destructuring page by passing it through frontend query
   const { page } = req.query;
   try {
-    // limit numbers of posts per page
+    // used to limit numbers of posts per page
     const LIMIT = 6;
     // getting start index of post on specific page
     // page converts to string when it's passed through req query, so it has to be converted to num again
@@ -22,23 +34,11 @@ export const getPosts = async (req, res) => {
       .limit(LIMIT)
       .skip(startIndex);
 
-    res.status(200).json({
+    res.json({
       data: posts,
       currentPage: Number(page),
       numberOfPages: Math.ceil(total / LIMIT),
     });
-  } catch (error) {
-    res.status(404).json({ message: error.message });
-  }
-};
-
-export const getPost = async (req, res) => {
-  const { id } = req.params;
-
-  try {
-    const post = await PostMessage.findById(id);
-
-    res.status(200).json(post);
   } catch (error) {
     res.status(404).json({ message: error.message });
   }
