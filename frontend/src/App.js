@@ -8,6 +8,7 @@ import Auth from "./components/Auth/Auth";
 import PostDetails from "./components/Posts/PostDetails/PostDetails";
 
 const App = () => {
+  //user variable, using it to render Auth page if user is not logged in or redirect to /posts if logged in.
   const user = JSON.parse(localStorage.getItem("profile"));
 
   return (

@@ -12,8 +12,10 @@ const Paginate = ({ page }) => {
 
   // fetch posts when page changes by dispatching getPosts action
   useEffect(() => {
-    if (page) dispatch(getPosts(page));
-  }, [page]);
+    if (page) {
+      dispatch(getPosts(page));
+    }
+  }, [dispatch, page]);
 
   // using Pagination component, currently static, and importing it in home-component
   return (

@@ -11,8 +11,8 @@ const appReducer = (state = { isLoading: true, posts: [] }, action) => {
         currentPage: action.payload.currentPage,
         numberOfPages: action.payload.numberOfPages,
       };
-    case "FETCH_SEARCH":
-      return { ...state, posts: action.payload.data };
+    case "FETCH_BY_SEARCH":
+      return action.payload;
     case "CREATE":
       return { ...state, posts: [...state.posts, action.payload] };
     case "UPDATE":

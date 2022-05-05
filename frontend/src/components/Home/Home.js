@@ -14,9 +14,10 @@ import {
 import Posts from "../Posts/Posts";
 import Form from "../Form/Form";
 import Pagination from "../Pagination/Pagination";
-import { getPosts, getPostsBySearch } from "../../actions/posts";
+import { getPostsBySearch } from "../../actions/posts";
 import useStyles from "./styles";
 
+// return new url search params, call it and pass useLocation. Will be used as a hook.
 function useQuery() {
   return new URLSearchParams(useLocation().search);
 }
@@ -54,9 +55,9 @@ const Home = () => {
     }
   };
 
-  const handleAdd = (tag) => setTags([...tags, tag]);
-  const handleDelete = (tagToDelete) =>
-    setTags(tags.filter((tag) => tag !== tagToDelete));
+  const handleAddChip = (tag) => setTags([...tags, tag]);
+  const handleDeleteChip = (chipToDelete) =>
+    setTags(tags.filter((tag) => tag !== chipToDelete));
 
   // utilizing grids for form and post components with suitable alignment for different screen sizes. Components are connected to signed in user.
   return (
@@ -69,7 +70,10 @@ const Home = () => {
           alignItems="stretch"
           spacing={3}
         >
-          <Grid item xs={12} sm={6} md={4}>
+          <Grid item xs={12} sm={6} md={9}>
+            <Posts setCurrentId={setCurrentId} />
+          </Grid>
+          <Grid item xs={12} sm={6} md={3}>
             <AppBar
               className={classes.appBarSearch}
               position="static"
@@ -87,28 +91,30 @@ const Home = () => {
               <ChipInput
                 style={{ margin: "10px 0" }}
                 value={tags}
-                onAdd={handleAdd}
-                onDelete={handleDelete}
+                onAdd={(chip) => handleAddChip(chip)}
+                onDelete={(chip) => handleDeleteChip(chip)}
                 label="Search Tags"
                 variant="outlined"
               />
               <Button
+                onClick={searchPost}
                 className={classes.searchButton}
                 variant="contained"
                 color="primary"
                 size="small"
-                onClick={searchPost}
                 fullWidth
               >
                 Search
               </Button>
             </AppBar>
             <Form currentId={currentId} setCurrentId={setCurrentId} />
-            <Paper elevation={6}>
-              <Pagination page={page} />
-            </Paper>
+            {!searchQuery && !tags.length && (
+              <Paper className={classes.pagination} elevation={6}>
+                <Pagination page={page} />
+              </Paper>
+            )}
           </Grid>
-          <Grid item xs={12} sm={12} md={8}>
+          <Grid item xs={12} sm={6} md={9}>
             <Posts setCurrentId={setCurrentId} />
           </Grid>
         </Grid>
