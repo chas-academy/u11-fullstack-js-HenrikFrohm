@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
@@ -5,6 +6,8 @@
 [![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
+=======
+>>>>>>> cc53722d9458b50656a3d856cab751e79381940d
 <!-- PROJECT DESCRIPTION-->
 <br />
   <h3 align="center">Fightstories</h3>
@@ -15,11 +18,11 @@
     <a href="https://docs.google.com/document/d/1J2uC24e3qyB1vx0d1tDZspw5KQtstBlE/edit?usp=sharing&ouid=116450704019366372650&rtpof=true&sd=true"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/github_username/repo_name">View Demo</a>
+    <a href="https://u11-fightstories-app.netlify.app/">View Demo</a>
     ·
-    <a href="https://github.com/github_username/repo_name/issues">Report Bug</a>
+    <a href="https://github.com/chas-academy/u11-fullstack-js-HenrikFrohm/issues">Report Bug</a>
     ·
-    <a href="https://github.com/github_username/repo_name/issues">Request Feature</a>
+    <a href="https://github.com/chas-academy/u11-fullstack-js-HenrikFrohm/issues">Request Feature</a>
   </p>
 </p>
 
@@ -40,16 +43,16 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
+    <li><a href="#requirement-specification">Requirement specification</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#https://github.com/HenrikFrohm/u11-project/blob/master/LICENSE.md">License</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgements">Acknowledgements</a></li>
   </ol>
 </details>
 
 <!-- ABOUT THE PROJECT -->
+<<<<<<< HEAD
 
 ## About The Project
 
@@ -59,6 +62,19 @@
 - [Node.js]()
 - [Express]()
 - [MongoDB]()
+=======
+## About The Project
+The goal of the task is to demonstrate my programming knowledge and skills to go from an idea and concept phase to a complete application in a limited timeframe. 
+
+This assignment should demonstrate understanding of, application, and use of a RESTful API in node with JWT-based authentication with the MongoDB document database.
+
+### Built With
+
+* [React]()
+* [Node.js]()
+* [Express]()
+* [MongoDB]()
+>>>>>>> cc53722d9458b50656a3d856cab751e79381940d
 
 <!-- GETTING STARTED -->
 
@@ -74,7 +90,7 @@ This is an example of how to list things you need to use the software and how to
   ```sh
   npm install npm@latest -g
   ```
-
+  
 ### Installation
 
 1. Register an account on https://mongodb.com and create a MongoDB cluster.
@@ -92,7 +108,11 @@ Then save the URI string, and replace the password with a password of your choic
    ```sh
    npm install
    ```
+   
+<!-- REQUIREMENTS -->
+### Requirement specification
 
+<<<<<<< HEAD
 Create a .env file in the root folder. Add the environment variables that is presented in the .env.example file to the .env file:
 
 ```sh
@@ -111,6 +131,25 @@ Default PORT is 5000, but you can set it to whatever you want.
 Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
 
 _For more examples, please refer to the [Documentation](https://example.com)_
+=======
+### Non-functional requirements
+* The application must provide a RESTful API
+* The application must work in all modern browsers
+* The application must be responsive
+
+### Functional requirements
+* A user must be able to register an account
+* A user must be able to login to their account
+* A user must be able to search in the application
+* An administrative user must be able to log in to a basic dashboard and create/update/delete users
+
+### Bonus requirements
+* An administrative user should be able to set permissions based on user roles
+* An administrative user should be able to create/read/update/delete user roles
+* An administrative user should be able to send out emails from the admin dashboard
+
+_For more examples, please refer to the [Documentation](https://docs.google.com/document/d/1J2uC24e3qyB1vx0d1tDZspw5KQtstBlE/edit?usp=sharing&ouid=116450704019366372650&rtpof=true&sd=true)
+>>>>>>> cc53722d9458b50656a3d856cab751e79381940d
 
 <!-- ROADMAP -->
 
@@ -118,6 +157,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 
 See the [open issues](https://github.com/github_username/repo_name/issues) for a list of proposed features (and known issues).
 
+<<<<<<< HEAD
 <!-- CONTRIBUTING -->
 
 ## Contributing
@@ -130,6 +170,8 @@ Contributions are what make the open source community such an amazing place to l
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
+=======
+>>>>>>> cc53722d9458b50656a3d856cab751e79381940d
 <!-- LICENSE -->
 
 ## License
@@ -140,8 +182,11 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
 
-Henrik Frohm - henrik.frohm@chasacademy.se
+Author: Henrik Frohm
+Email: henrik.frohm@chasacademy.se
+Linkedin: [https://www.linkedin.com/in/henrik-frohm-7ab764207]
 Project Link: [https://github.com/chas-academy/u11-fullstack-js-HenrikFrohm)
+<<<<<<< HEAD
 
 <!-- ACKNOWLEDGEMENTS
 ## Acknowledgements
@@ -166,3 +211,5 @@ Project Link: [https://github.com/chas-academy/u11-fullstack-js-HenrikFrohm)
 [license-url]: https://github.com/github_username/repo_name/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/henrik-frohm-7ab764207/
+=======
+>>>>>>> cc53722d9458b50656a3d856cab751e79381940d
