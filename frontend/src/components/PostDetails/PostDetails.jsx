@@ -75,7 +75,6 @@ const PostDetails = () => {
           />
         </div>
       </div>
-      {/* recommended posts */}
     </Paper>
   );
 };
