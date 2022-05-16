@@ -18,9 +18,6 @@ app.use(express.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
 
 // every route in post routes is going to start with prefix "/posts"
-<<<<<<< HEAD
-app.use('/posts', postRoutes);
-=======
 app.use("/posts", postRoutes);
 
 app.use("/user", userRoutes);
@@ -29,7 +26,6 @@ app.use("/user", userRoutes);
 app.get("/", (req, res) => {
   res.send("Test");
 });
->>>>>>> develop
 
 // MongoDB database url stored and backend port stored in env
 const PORT = process.env.PORT || 5000;
