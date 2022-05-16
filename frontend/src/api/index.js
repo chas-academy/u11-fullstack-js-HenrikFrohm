@@ -20,8 +20,19 @@ API.interceptors.request.use((req) => {
 // url for backend route
 const url = "https://u11-project.herokuapp.com/posts";
 
-// call to url
-export const fetchPosts = () => API.get("/posts");
+// call to specific page url and id
+export const fetchPost = (id) => API.get(`/posts/${id}`);
+
+// call to specific page and get posts
+export const fetchPosts = (page) => API.get(`/posts?page=${page}`);
+
+// search post
+export const fetchPostsBySearch = (searchQuery) =>
+  API.get(
+    `/posts/search?searchQuery=${searchQuery.search || "none"}&tags=${
+      searchQuery.tags
+    }`
+  );
 
 //create post request
 export const createPost = (newPost) => API.post("/posts", newPost);

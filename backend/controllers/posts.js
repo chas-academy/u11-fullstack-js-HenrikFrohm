@@ -6,10 +6,46 @@ import PostMessage from "../models/postMessage.js";
 const router = express.Router();
 
 export const getPosts = async (req, res) => {
+  // destructuring page by passing it through frontend query
+  const { page } = req.query;
   try {
-    const postMessages = await PostMessage.find();
+    // used to limit numbers of posts per page
+    const LIMIT = 6;
+    // getting start index of post on specific page
+    // page converts to string when it's passed through req query, so it has to be converted to num again
+    const startIndex = (Number(page) - 1) * LIMIT;
+    // count documents to know how many posts exists to get a specific number of pages
+    const total = await PostMessage.countDocuments({});
+    // get posts from newest to oldest by sorting id
+    const posts = await PostMessage.find()
+      .sort({ _id: -1 })
+      .limit(LIMIT)
+      .skip(startIndex);
 
-    res.status(200).json(postMessages);
+    //passing new object to frontend. Data is equal to posts, currentPage to number of the page and numberOfPages is equal to total / LIMIT
+    res.json({
+      data: posts,
+      currentPage: Number(page),
+      numberOfPages: Math.ceil(total / LIMIT),
+    });
+  } catch (error) {
+    res.status(404).json({ message: error.message });
+  }
+};
+
+export const getPostsBySearch = async (req, res) => {
+  // destructuring searchQuery and tags by passing them through frontend query
+  const { searchQuery, tags } = req.query;
+
+  try {
+    // converting title to regular expression to simplify for mongoose and mongodb to search the db. Including ignore case to make all posts that match search term show up.
+    const title = new RegExp(searchQuery, "i");
+    // find all posts in db that match either title and/or tag- criterias.
+    const posts = await PostMessage.find({
+      $or: [{ title }, { tags: { $in: tags.split(",") } }],
+    });
+
+    res.json({ data: posts });
   } catch (error) {
     res.status(404).json({ message: error.message });
   }
