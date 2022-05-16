@@ -18,6 +18,7 @@ import * as api from "../api/index.js";
 // using redux to dispatch an action from data in backend. Data is sent through payload to reducer.
 
 // fetch post by id
+// dispatch start loading
 export const getPost = (id) => async (dispatch) => {
   try {
     dispatch({ type: START_LOADING });
@@ -25,6 +26,7 @@ export const getPost = (id) => async (dispatch) => {
     const { data } = await api.fetchPost(id);
 
     dispatch({ type: FETCH_POST, payload: { post: data } });
+    dispatch({ type: END_LOADING });
   } catch (error) {
     console.log(error);
   }
