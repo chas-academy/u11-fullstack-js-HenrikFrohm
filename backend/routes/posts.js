@@ -1,5 +1,6 @@
 import express from "express";
 import {
+  getPost,
   getPosts,
   getPostsBySearch,
   createPost,
@@ -13,6 +14,7 @@ const router = express.Router();
 // Defining router using express methods that correspond to HTTP methods, like get, post and update/patch.
 // Restricting certain actions to auth users
 router.get("/", getPosts);
+router.get("/:id", getPost);
 router.get("/search", getPostsBySearch);
 router.post("/", auth, createPost);
 router.patch("/:id", auth, updatePost);
