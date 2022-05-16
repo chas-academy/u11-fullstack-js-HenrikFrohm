@@ -2,9 +2,7 @@
 import axios from "axios";
 
 // axios instance
-const API = axios.create({
-  baseURL: "https://u11-project.herokuapp.com",
-});
+const API = axios.create({ baseURL: "http://localhost:5000" });
 
 // sends token to backend middleware to verify logged in user
 API.interceptors.request.use((req) => {
@@ -18,7 +16,10 @@ API.interceptors.request.use((req) => {
 });
 
 // url for backend route
-const url = "https://u11-project.herokuapp.com/posts";
+// const url = "http://localhost:5000/posts";
+
+// url for Heroku
+// const url = 'https://u11-project.herokuapp.com/posts';
 
 // call to specific page url and id
 export const fetchPost = (id) => API.get(`/posts/${id}`);
