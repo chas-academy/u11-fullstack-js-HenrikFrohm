@@ -11,7 +11,7 @@ import { useParams, useHistory } from "react-router-dom";
 
 import useStyles from "./styles";
 //api to backend to give details about specific post
-import { getPost, getPostsBySearch } from "../../actions/posts";
+import { getPost } from "../../actions/posts";
 
 const PostDetails = () => {
   //get data about posts with useSelecter with callbackfunction with state and state.post reducer
@@ -26,16 +26,6 @@ const PostDetails = () => {
   useEffect(() => {
     dispatch(getPost(id));
   }, [id]);
-
-  //see if each post exist. If it does dispatch action creator.
-  // using tags to recommend post
-  useEffect(() => {
-    if (post) {
-      dispatch(
-        getPostsBySearch({ search: "none", tags: post?.tags.join(",") })
-      );
-    }
-  }, [post]);
 
   //checks to handle rendering jsx data before it is fetched
   if (!post) return null;
