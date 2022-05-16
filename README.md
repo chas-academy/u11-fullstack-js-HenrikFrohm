@@ -11,7 +11,7 @@
 
   <p align="center">
      Fightstories is an hub for combat-sport fans around the world to share information- and news. Here you can check out and post the latest news, interviews and stats for each of the big stars of the sports. We welcome you to our community, where you can share your thoughts in the comments section and subscribe to your favorite fighters to get up to date on future events involving them.
-    <br />
+    <br />  
     <a href="https://docs.google.com/document/d/1J2uC24e3qyB1vx0d1tDZspw5KQtstBlE/edit?usp=sharing&ouid=116450704019366372650&rtpof=true&sd=true"><strong>Explore the docs »</strong></a>
     <br />
     <br />
@@ -60,16 +60,17 @@
 - [MongoDB]()
 
 ## About The Project
-The goal of the task is to demonstrate my programming knowledge and skills to go from an idea and concept phase to a complete application in a limited timeframe. 
+
+The goal of the task is to demonstrate my programming knowledge and skills to go from an idea and concept phase to a complete application in a limited timeframe.
 
 This assignment should demonstrate understanding of, application, and use of a RESTful API in node with JWT-based authentication with the MongoDB document database.
 
 ### Built With
 
-* [React]()
-* [Node.js]()
-* [Express]()
-* [MongoDB]()
+- [React]()
+- [Node.js]()
+- [Express]()
+- [MongoDB]()
 
 <!-- GETTING STARTED -->
 
@@ -85,7 +86,7 @@ This is an example of how to list things you need to use the software and how to
   ```sh
   npm install npm@latest -g
   ```
-  
+
 ### Installation
 
 1. Register an account on https://mongodb.com and create a MongoDB cluster.
@@ -103,8 +104,9 @@ Then save the URI string, and replace the password with a password of your choic
    ```sh
    npm install
    ```
-   
+
 <!-- REQUIREMENTS -->
+
 ### Requirement specification
 
 Create a .env file in the root folder. Add the environment variables that is presented in the .env.example file to the .env file:
@@ -127,22 +129,25 @@ Use this space to show useful examples of how a project can be used. Additional 
 _For more examples, please refer to the [Documentation](https://example.com)_
 
 ### Non-functional requirements
-* The application must provide a RESTful API
-* The application must work in all modern browsers
-* The application must be responsive
+
+- The application must provide a RESTful API
+- The application must work in all modern browsers
+- The application must be responsive
 
 ### Functional requirements
-* A user must be able to register an account
-* A user must be able to login to their account
-* A user must be able to search in the application
-* An administrative user must be able to log in to a basic dashboard and create/update/delete users
+
+- A user must be able to register an account
+- A user must be able to login to their account
+- A user must be able to search in the application
+- An administrative user must be able to log in to a basic dashboard and create/update/delete users
 
 ### Bonus requirements
-* An administrative user should be able to set permissions based on user roles
-* An administrative user should be able to create/read/update/delete user roles
-* An administrative user should be able to send out emails from the admin dashboard
 
-_For more examples, please refer to the [Documentation](https://docs.google.com/document/d/1J2uC24e3qyB1vx0d1tDZspw5KQtstBlE/edit?usp=sharing&ouid=116450704019366372650&rtpof=true&sd=true)
+- An administrative user should be able to set permissions based on user roles
+- An administrative user should be able to create/read/update/delete user roles
+- An administrative user should be able to send out emails from the admin dashboard
+
+\_For more examples, please refer to the [Documentation](https://docs.google.com/document/d/1J2uC24e3qyB1vx0d1tDZspw5KQtstBlE/edit?usp=sharing&ouid=116450704019366372650&rtpof=true&sd=true)
 
 <!-- ROADMAP -->
 
