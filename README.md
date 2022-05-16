@@ -70,7 +70,6 @@ This assignment should demonstrate understanding of, application, and use of a R
 * [Node.js]()
 * [Express]()
 * [MongoDB]()
->>>>>>> cc53722d9458b50656a3d856cab751e79381940d
 
 <!-- GETTING STARTED -->
 
