@@ -5,8 +5,6 @@
 [![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
-
-
 <!-- PROJECT DESCRIPTION-->
 <br />
   <h3 align="center">Fightstories</h3>
@@ -14,7 +12,7 @@
   <p align="center">
      Fightstories is an hub for combat-sport fans around the world to share information- and news. Here you can check out and post the latest news, interviews and stats for each of the big stars of the sports. We welcome you to our community, where you can share your thoughts in the comments section and subscribe to your favorite fighters to get up to date on future events involving them.
     <br />
-    <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
+    <a href="https://docs.google.com/document/d/1J2uC24e3qyB1vx0d1tDZspw5KQtstBlE/edit?usp=sharing&ouid=116450704019366372650&rtpof=true&sd=true"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://github.com/github_username/repo_name">View Demo</a>
@@ -24,8 +22,6 @@
     <a href="https://github.com/github_username/repo_name/issues">Request Feature</a>
   </p>
 </p>
-
-
 
 <!-- TABLE OF CONTENTS -->
 <details open="open">
@@ -53,25 +49,19 @@
   </ol>
 </details>
 
-
-
 <!-- ABOUT THE PROJECT -->
+
 ## About The Project
-
-
-
-
 
 ### Built With
 
-* [React]()
-* [Node.js]()
-* [Express]()
-* [MongoDB]()
-
-
+- [React]()
+- [Node.js]()
+- [Express]()
+- [MongoDB]()
 
 <!-- GETTING STARTED -->
+
 ## Getting Started
 
 To get a local copy up and running follow these simple steps.
@@ -79,7 +69,8 @@ To get a local copy up and running follow these simple steps.
 ### Prerequisites
 
 This is an example of how to list things you need to use the software and how to install them.
-* npm
+
+- npm
   ```sh
   npm install npm@latest -g
   ```
@@ -88,7 +79,7 @@ This is an example of how to list things you need to use the software and how to
 
 1. Register an account on https://mongodb.com and create a MongoDB cluster.
 
-Create a project and a free shared database, then click on Connect and choose "Connect your application". 
+Create a project and a free shared database, then click on Connect and choose "Connect your application".
 Set Driver is set to Node.js.
 
 Then save the URI string, and replace the password with a password of your choice, and replace myFirstDatabase with the name you want your database to have.
@@ -97,40 +88,38 @@ Then save the URI string, and replace the password with a password of your choic
    ```sh
    git clone https://github.com/chas-academy/u11-fullstack-js-HenrikFrohm
    ```
-2. Install NPM packages
+3. Install NPM packages
    ```sh
    npm install
    ```
 
 Create a .env file in the root folder. Add the environment variables that is presented in the .env.example file to the .env file:
-  
- ```sh
- PORT:
- CONNECTION_URL:
- ```
+
+```sh
+PORT:
+CONNECTION_URL:
+```
 
 Provide the saved MONGO URI string you received from your MongoDB cluster in CONNECTION_URL.
 
 Default PORT is 5000, but you can set it to whatever you want.
 
-
 <!-- USAGE EXAMPLES -->
+
 ## Usage
 
 Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
 
 _For more examples, please refer to the [Documentation](https://example.com)_
 
-
-
 <!-- ROADMAP -->
+
 ## Roadmap
 
 See the [open issues](https://github.com/github_username/repo_name/issues) for a list of proposed features (and known issues).
 
-
-
 <!-- CONTRIBUTING -->
+
 ## Contributing
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
@@ -141,24 +130,20 @@ Contributions are what make the open source community such an amazing place to l
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-
-
 <!-- LICENSE -->
+
 ## License
 
 Distributed under the MIT License. See `LICENSE` for more information.
 
-
-
 <!-- CONTACT -->
+
 ## Contact
 
 Henrik Frohm - henrik.frohm@chasacademy.se
 Project Link: [https://github.com/chas-academy/u11-fullstack-js-HenrikFrohm)
 
-
-
-<!-- ACKNOWLEDGEMENTS 
+<!-- ACKNOWLEDGEMENTS
 ## Acknowledgements
 
 * []()
@@ -166,11 +151,9 @@ Project Link: [https://github.com/chas-academy/u11-fullstack-js-HenrikFrohm)
 * []()
 -->
 
-
-
-
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+
 [contributors-shield]: https://img.shields.io/github/contributors/github_username/repo.svg?style=for-the-badge
 [contributors-url]: https://github.com/github_username/repo_name/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/github_username/repo.svg?style=for-the-badge
