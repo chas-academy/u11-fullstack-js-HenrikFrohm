@@ -63,7 +63,6 @@ export const getPostsBySearch = (searchQuery) => async (dispatch) => {
     console.log(error);
   }
 };
-
 // try-catch function for post api request action
 export const createPost = (post, history) => async (dispatch) => {
   try {

@@ -5,18 +5,6 @@ import PostMessage from "../models/postMessage.js";
 
 const router = express.Router();
 
-export const getPost = async (req, res) => {
-  const { id } = req.params;
-
-  try {
-    const post = await PostMessage.findById(id);
-
-    res.status(200).json(post);
-  } catch (error) {
-    res.status(404).json({ message: error.message });
-  }
-};
-
 export const getPosts = async (req, res) => {
   // destructuring page by passing it through frontend query
   const { page } = req.query;
@@ -58,6 +46,18 @@ export const getPostsBySearch = async (req, res) => {
     });
 
     res.json({ data: posts });
+  } catch (error) {
+    res.status(404).json({ message: error.message });
+  }
+};
+
+export const getPost = async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    const post = await PostMessage.findById(id);
+
+    res.status(200).json(post);
   } catch (error) {
     res.status(404).json({ message: error.message });
   }
