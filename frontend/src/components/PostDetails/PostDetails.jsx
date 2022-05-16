@@ -11,7 +11,7 @@ import { useParams, useHistory } from "react-router-dom";
 
 import useStyles from "./styles";
 //api to backend to give details about specific post
-import { getPost } from "../../../actions/posts";
+import { getPost } from "../../actions/posts";
 
 const PostDetails = () => {
   //get data about posts with useSelecter with callbackfunction with state and state.post reducer
@@ -26,6 +26,17 @@ const PostDetails = () => {
   useEffect(() => {
     dispatch(getPost(id));
   }, [id]);
+
+  //checks to handle rendering data before it is fetched
+  if (!post) return null;
+
+  if (isLoading) {
+    return (
+      <Paper elevation={6} className={classes.loadingPaper}>
+        <CircularProgress size="7em" />
+      </Paper>
+    );
+  }
 
   return (
     <Paper style={{ padding: "20px", borderRadius: "15px" }} elevation={6}>
@@ -50,13 +61,7 @@ const PostDetails = () => {
             {moment(post.createdAt).fromNow()}
           </Typography>
           <Divider style={{ margin: "20px 0" }} />
-          <Typography variant="body1">
-            <strong>Realtime Chat - coming soon!</strong>
-          </Typography>
-          <Divider style={{ margin: "20px 0" }} />
-          <Typography variant="body1">
-            <strong>Comments - coming soon!</strong>
-          </Typography>
+
           <Divider style={{ margin: "20px 0" }} />
         </div>
         <div className={classes.imageSection}>
