@@ -24,7 +24,7 @@ app.use("/user", userRoutes);
 
 // get request test for Heroku deployment
 app.get("/", (req, res) => {
-  res.send("Test");
+  res.send("U11 is running");
 });
 
 // MongoDB database url stored and backend port stored in env
