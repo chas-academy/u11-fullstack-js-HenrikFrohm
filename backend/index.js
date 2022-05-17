@@ -11,8 +11,8 @@ const app = express();
 dotenv.config();
 
 // allowing requests to be sent properly.
-app.use(express.json({ limit: "30mb", extended: true }));
-app.use(express.urlencoded({ limit: "30mb", extended: true }));
+app.use(express.json({ extended: true }));
+app.use(express.urlencoded());
 
 // allows access to resources outside domain
 app.use(cors());
@@ -24,7 +24,7 @@ app.use("/user", userRoutes);
 
 // get request test for Heroku deployment
 app.get("/", (req, res) => {
-  res.send("Server is running fine");
+  res.send("APP IS RUNNING.");
 });
 
 // MongoDB database url stored and backend port stored in env
