@@ -2,7 +2,8 @@
 import axios from "axios";
 
 // axios instance
-const API = axios.create({ baseURL: "https://u11-project.herokuapp.com/" });
+const API = axios.create({ baseURL: "http://localhost:5000" });
+//const API = axios.create({ baseURL: "https://u11-project.herokuapp.com/" });
 
 // sends token to backend middleware to verify logged in user
 API.interceptors.request.use((req) => {
