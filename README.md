@@ -5,6 +5,7 @@
   <p align="center">
      Fightstories is an hub for combat-sport fans around the world to share information- and news. Here you can check out and post the latest news, interviews and stats for each of the big stars of the sports. We welcome you to our community, where you can share your thoughts in the comments section and subscribe to your favorite fighters to get up to date on future events involving them.
     <br />  
+    <br />  
     <a href="https://docs.google.com/document/d/1J2uC24e3qyB1vx0d1tDZspw5KQtstBlE/edit?usp=sharing&ouid=116450704019366372650&rtpof=true&sd=true"><strong>Requirement Specification »</strong></a>
     <br />
     <a href="https://u11-fullstack-js-henrikfrohm.netlify.app/posts">View Demo (currently not working as intended)</a>
