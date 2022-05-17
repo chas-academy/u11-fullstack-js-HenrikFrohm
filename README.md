@@ -9,10 +9,6 @@
     <br />
     <br />
     <a href="https://u11-fullstack-js-henrikfrohm.netlify.app/posts">View Demo (currently not working as intended)</a>
-    ·
-    <a href="https://github.com/chas-academy/u11-fullstack-js-HenrikFrohm/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/chas-academy/u11-fullstack-js-HenrikFrohm/issues">Request Feature</a>
   </p>
 </p>
 
