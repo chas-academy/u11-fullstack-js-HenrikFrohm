@@ -41,7 +41,7 @@ This assignment should demonstrate understanding of full-stack application conce
 
 The idea of the application is to provide users with a blog-like experience; where they can create an account, log in, create blog-posts, like/delete posts or just explore the collection of posts provided by search or through the pagination feature (exploring posts seperated by pages).
 
-At a later stage I would have also liked to add a comment-section- as well as recommended posts feature. This, or other features can also be added by anyone interested in continuing working on this application.
+At a later stage I would have also liked to add a comment-section- as well as recommended posts feature. This or other features can also be added by anyone interested in continuing working on this application.
 
 ### Built With
 
