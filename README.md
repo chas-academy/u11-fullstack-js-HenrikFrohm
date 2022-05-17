@@ -39,17 +39,6 @@
 
 ## About The Project
 
-### Built With
-
-Application is created using the MERN-stack, which includes:
-
-- [MongoDB]()
-- [Express]()
-- [React]()
-- [Node.js]()
-
-## About The Project
-
 The goal of the task is to demonstrate my programming knowledge and skills to go from an idea and concept phase to a complete full-stack application in a limited timeframe.
 
 This assignment should demonstrate understanding of full-stack application concepts, and how to use a RESTful API in node with JWT-based authentication with the MongoDB document database.
@@ -58,10 +47,12 @@ The Idea of the application is to provide users with a blog-like experience; whe
 
 ### Built With
 
+Application is created using the MERN-stack, which includes:
+
+- [MongoDB]()
+- [Express]()
 - [React]()
 - [Node.js]()
-- [Express]()
-- [MongoDB]()
 
 <!-- GETTING STARTED -->
 
