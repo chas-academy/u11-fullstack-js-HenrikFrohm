@@ -110,4 +110,5 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 Author: Henrik Frohm
 Email: henrik.frohm@chasacademy.se
+<br />  
 Linkedin: [https://www.linkedin.com/in/henrik-frohm-7ab764207]
