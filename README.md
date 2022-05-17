@@ -108,7 +108,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
 
-Author: Henrik Frohm
-Email: henrik.frohm@chasacademy.se
-<br />  
-Linkedin: [https://www.linkedin.com/in/henrik-frohm-7ab764207]
+Author: Henrik Frohm <br />
+Email: henrik.frohm@chasacademy.se <br />  
+Linkedin: https://www.linkedin.com/in/henrik-frohm-7ab764207
