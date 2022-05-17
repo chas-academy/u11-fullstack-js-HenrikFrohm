@@ -92,18 +92,9 @@ Then save the URI string, and replace the password with a password of your choic
 
 ### Requirement specification
 
-Create a .env file in the root folder. Add the environment variables that is presented in the .env.example file to the .env file:
+The requirement specification is provided in a separate document. It contains a summary, users forms/personas/stories, requirements, a sitemap, a wireframe and routes for the application.
 
-```sh
-PORT:
-CONNECTION_URL:
-```
-
-Provide the saved MONGO URI string you received from your MongoDB cluster in CONNECTION_URL.
-
-Default PORT is 5000, but you can set it to whatever you want.
-
-Extended requirement specification:
+Link to the requirement specification:
 
 <a href="https://docs.google.com/document/d/1J2uC24e3qyB1vx0d1tDZspw5KQtstBlE/edit?usp=sharing&ouid=116450704019366372650&rtpof=true&sd=true"><strong>Requirement Specification »</strong></a>
 
