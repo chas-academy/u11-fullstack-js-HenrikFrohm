@@ -11,8 +11,8 @@ const app = express();
 dotenv.config();
 
 // allowing requests to be sent properly.
-app.use(express.json({ extended: true }));
-app.use(express.urlencoded());
+app.use(express.json({ limit: "30mb", extended: true }));
+app.use(express.urlencoded({ limit: "30mb", extended: true }));
 
 // allows access to resources outside domain
 app.use(cors());
