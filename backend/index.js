@@ -5,6 +5,13 @@ import mongoose from "mongoose";
 import postRoutes from "./routes/posts.js";
 import userRoutes from "./routes/users.js";
 import dotenv from "dotenv";
+import AdminBro from "admin-bro";
+import AdminBroExpressjs from "admin-bro-expressjs";
+import AdminBroMongoose from "admin-bro-mongoose";
+
+import userSchema from "./models/user.js";
+
+AdminBro.registerAdapter(AdminBroMongoose);
 
 // initialize application, allowing methods
 const app = express();
@@ -23,9 +30,18 @@ app.use("/posts", postRoutes);
 app.use("/user", userRoutes);
 
 // get request test for Heroku
-app.get("/", (req, res) => {
-  res.send("Test API");
+//app.get("/", (req, res) => {
+//  res.send("Test API");
+//});
+
+//allow AdminBro to manage mongoose resources with it
+const adminBro = new AdminBro({
+  resources: [userSchema],
+  rootPath: "/admin",
 });
+
+const router = AdminBroExpressjs.buildRouter(adminBro);
+app.use(adminBro.options.rootPath, router);
 
 // MongoDB database url stored and backend port stored in env
 const PORT = process.env.PORT || 5000;
