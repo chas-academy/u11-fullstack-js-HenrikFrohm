@@ -108,8 +108,11 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
    ```sh
    Author: Henrik Frohm
+   ```
    ```sh
    Email: henrik.frohm@chasacademy.se
+   ```
    ```sh
    Linkedin: https://www.linkedin.com/in/henrik-frohm-7ab764207
+   ```
    ```
