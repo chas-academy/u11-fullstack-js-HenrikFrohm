@@ -29,17 +29,17 @@ app.use("/posts", postRoutes);
 
 app.use("/user", userRoutes);
 
-// get request test for Heroku
-//app.get("/", (req, res) => {
-//  res.send("Test API");
-//});
+app.get("/", (req, res) => {
+  res.send("APP IS RUNNING");
+});
 
-//allow AdminBro to manage mongoose resources with it
+// pass configuration settings to AdminBro
 const adminBro = new AdminBro({
   resources: [userSchema],
   rootPath: "/admin",
 });
 
+// router which will handle all AdminBro routes
 const router = AdminBroExpressjs.buildRouter(adminBro);
 app.use(adminBro.options.rootPath, router);
 
