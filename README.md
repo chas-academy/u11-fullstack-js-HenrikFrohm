@@ -8,7 +8,7 @@
     <br />  
     <a href="https://docs.google.com/document/d/1J2uC24e3qyB1vx0d1tDZspw5KQtstBlE/edit?usp=sharing&ouid=116450704019366372650&rtpof=true&sd=true"><strong>Requirement Specification »</strong></a>
     <br />
-    <a href="https://u11-fullstack-js-henrikfrohm.netlify.app/posts">View Demo <br />(currently not working as intended)</a>
+    <a href="https://neon-custard-04a331.netlify.app/posts">View Demo <br /></a>
   </p>
 </p>
 
